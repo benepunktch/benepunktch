@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EST. 2021 Hoodie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+ <!-- Desktop-Navigation (wie bisher) -->
+      <header class="floating-nav desktop-nav">
+        <div class="logo">
+          <a href="index.html">
+            <img src="benelogo.png" alt="Bené Logo">
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>        
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+ <!-- Mobile Navigation -->
+<header class="mobile-nav">
+  <div class="nav-container">
+    <div class="nav-header">
+      <div class="logo">
+          <a href="index.html">
+            <img src="benelogo.png" alt="Bené Logo">
+          </a>
+        </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="index.html#home">Home</a></li>
+      <li class="nav-item"><a href="shop.html">Shop</a></li>
+      <li class="nav-item"><a href="about.html">About</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header></header>
+        <main>
+            <section class="product-detail">
+                <div class="product-image">
+                    <img src="HoodieEST_Mockup.png" alt="Bené Oversized Pullover">
+                </div>
+                <div class="product-info">
+                    <h1>EST. 2021 Hoodie</h1>
+                    <p>Bené since 2021</p>
+                    <p class="price">45 CHF</p>
+                    <form action="submit_form.php" method="post" class="contact-form">
+  <div class="size-selection">
+  <p><strong>Wähle deine Größe:</strong></p>
+  
+  <label class="size-option">
+    <input type="radio" name="size" value="XS">
+    <span>XS</span>
+  </label>
+
+  <label class="size-option">
+    <input type="radio" name="size" value="S">
+    <span>S</span>
+  </label>
+
+  <label class="size-option">
+    <input type="radio" name="size" value="M">
+    <span>M</span>
+  </label>
+
+  <label class="size-option">
+    <input type="radio" name="size" value="L">
+    <span>L</span>
+  </label>
+
+  <label class="size-option">
+    <input type="radio" name="size" value="XL">
+    <span>XL</span>
+  </label>
+</div>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="phone">Telefonnummer:</label>
+  <input type="text" id="phone" name="phone" required>
+
+  <label for="address">Adresse:</label>
+  <textarea id="address" name="address" required></textarea>
+
+  <!-- Verstecktes Feld für den Produktnamen -->
+  <input type="hidden" id="product" name="product" value="Just Love It Tshirt">
+
+  <button type="submit">Anfrage senden</button>
+</form>
+
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-bottom">
+                <p>Rapperswil-Jona, Switzerland</p>
+                <p>&copy; 2025 Bené. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let customCursor = document.querySelector(".custom-cursor");
+
+    // Falls der Cursor nicht existiert, erstelle ihn neu
+    if (!customCursor) {
+        customCursor = document.createElement("div");
+        customCursor.classList.add("custom-cursor");
+        document.body.appendChild(customCursor);
+    }
+
+    document.addEventListener("mousemove", (e) => {
+        requestAnimationFrame(() => {
+            customCursor.style.left = `${e.clientX}px`;
+            customCursor.style.top = `${e.clientY}px`;
+            customCursor.style.opacity = "1"; // Falls er unsichtbar war, wieder sichtbar machen
+        });
+    });
+
+    // Falls Maus das Fenster verlässt → Cursor ausblenden
+    document.addEventListener("mouseleave", () => {
+        customCursor.style.opacity = "0";
+    });
+
+    // Falls Maus zurückkommt → Cursor wieder anzeigen
+    document.addEventListener("mouseenter", () => {
+        customCursor.style.opacity = "1";
+    });
+
+    // Cursor vergrößern, wenn er über interaktive Elemente fährt
+    document.querySelectorAll("a, button, .carousel-item").forEach((element) => {
+        element.addEventListener("mouseenter", () => {
+            customCursor.style.transform = "scale(1.5)";
+        });
+        element.addEventListener("mouseleave", () => {
+            customCursor.style.transform = "scale(1)";
+        });
+    });
+
+    console.log("✅ Custom Cursor erfolgreich geladen!");
+});
+</script>
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector('.mobile-nav .nav-menu');
+    menu.classList.toggle('active');
+  }
+</script>
+</body>
+</html>

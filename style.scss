@@ -1,0 +1,837 @@
+* Arvo fr alle Texte auf der Webseite (Grundschrift) */
+body, html, p, a, button, input, textarea, label {
+  font-family: 'Arvo', serif !important;
+  font-weight: 400; /* normale Schriftstrke */
+}
+
+/* Uberschriften, Navigation, Produkttitel, Preise fett machen */
+h1, h2, h3, .nav-links a, header nav ul li a, .product h2, .price {
+  font-family: 'Arvo', serif !important;
+  font-weight: 700 !important; /* fett fur Titel und Navigation */
+}
+
+/* Sicherstellen, dass Produktdetailseiten dieselbe Schrift nutzen */
+.product-detail, 
+.product-detail h1, 
+.product-detail p, 
+.product-detail .price, 
+.product-detail button,
+.contact-form label,
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Arvo', serif !important;
+}
+
+/* Kontaktformular professionelles Styling */
+.contact-form {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #ff4757;
+}
+
+
+/* Fixierte Navigation mit verschwindendem Effekt */
+header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(250, 239, 229, 0.9); /* Transparenter Hintergrund */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+/* Schwebeeffekt beim Hover */
+header:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+header.hidden {
+  transform: translateY(-100%);
+}
+
+header .logo img {
+  height: 50px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+header nav ul li {
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+header nav ul li a:hover {
+  color: #e63946;
+  filter: brightness(0.8);
+}
+
+/* Navigationsleiste */
+.nav-links a, header nav ul li a {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white !important;
+  transition: color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.nav-links a:hover, header nav ul li a:hover {
+  color: #e63946 !important;
+  filter: blur(1px);
+  text-shadow: 0px 0px 8px rgba(255, 0, 0, 0.8);
+}
+
+/* Entfernt die blaue Unterstreichung fr alle Links */
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Platzhalter fr Inhalt, damit Navigation nicht verdeckt */
+main {
+  margin-top: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+main section {
+  margin-bottom: 50px;
+}
+
+main section h1, main section h2 {
+  color: #e63946;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #bdafaf;
+  font-size: 0.9rem;
+  margin-top: 50px;
+}
+
+/* Startseite (#home) */
+#home {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Hauptinhalt */
+main {
+  margin-top: 0px;
+}
+
+/* Zustzliche Einstellungen */
+body:has(#home:target) header {
+  transform: translateY(0) !important;
+}
+
+body:not(.startseite) main {
+  margin-top: 130px;
+}
+
+/* Produktseiten */
+@media (max-width: 768px) {
+  .product-detail {
+    flex-direction: column;
+    text-align: center;
+  }
+  .product-image {
+    max-width: 100%;
+  }
+  .product-info {
+    text-align: center;
+  }
+}
+
+.product-detail .product-image {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-detail .product-image img {
+  max-height: 100%;
+  width: auto;
+	border-radius: 8px;
+}
+
+
+.product-detail .product-info {
+  padding: 10px;
+}
+
+.product-detail h1 {
+  font-size: 24px;
+}
+
+.product-detail p {
+  font-size: 16px;
+}
+
+.product-detail .price {
+  font-size: 18px;
+}
+
+/* Shop-Bereich */
+.shop h1 {
+  font-size: 80px; /* passe die Gre nach Bedarf an */
+  height: 60px;
+  margin-top: 30px;
+}
+
+.shop-title {
+  color: red;
+  font-size: 80px;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 140px;
+}
+
+/* Kontaktformular */
+.contact form input,
+.contact form textarea {
+  width: 100%;
+}
+
+/* Responsive Einstellungen fr Startseite */
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+  }
+ .image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* oder "contain", wenn du das ganze Bild sehen mchtest */
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+  }
+  .content h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  .content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .content .product-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e63946; /* rotes Feld */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.content .product-link:hover {
+  background-color: #ff4757; /* leicht vernderte Rottnung beim Hover */
+  transform: scale(1.1); /* bewegt den Link nach oben */
+}
+
+
+/* Styling fr Produktnamen in Shop */
+.shop .product a h2 {
+  text-decoration: none !important;
+  color: #2b2727 !important;
+}
+
+.shop .product a:hover h2 {
+  color: #e63946 !important;
+  text-decoration: none !important;
+}
+
+/* Styling fr die Grenauswahl */
+.size-selection {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.size-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #e63946;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.size-option input {
+  display: none;
+}
+
+.size-option span {
+  color: #e63946;
+}
+
+.size-option:hover {
+  background-color: #e63946;
+  color: #fff;
+}
+
+.size-option input:checked + span {
+  background-color: #e63946;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.size-option input:disabled + span {
+  text-decoration: line-through;
+  color: gray;
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+}
+
+/* Abschnitt fr Limited Heart Hoodie */
+#limited-hoodies {
+  padding: 40px 20px;
+  background-color: #f8f8f8;
+}
+
+.limited-hoodies-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.hoodie-image {
+  flex: 1;
+}
+
+.hoodie-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.hoodie-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.hoodie-info h2 {
+  margin-bottom: 20px;
+  color: #e63946;
+}
+
+.hoodie-info p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.hoodie-info .product-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e63946;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.hoodie-info .product-link:hover {
+  background-color: #ff4757;
+}
+
+/* Container fr die Startseite */
+#home {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Bild als Hintergrund */
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* oder "contain", wenn du das komplette Bild sehen mchtest */
+}
+
+/* Zentrierter Text */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* hohe Prioritt, damit der Text ber dem Bild liegt */
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Limited Heart Hoodie Abschnitt */
+#limited-hoodie-section {
+  padding: 40px 20px;
+  background-color: #f8f8f8;
+}
+
+#limited-hoodie-section .limited-hoodies-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Sorgt fr responsives Verhalten */
+}
+
+#limited-hoodie-section .hoodie-image {
+  flex: 1;
+  text-align: center;
+}
+
+#limited-hoodie-section .hoodie-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Falls du das ganze Bild siehst, kannst du auch "contain" verwenden */
+  border-radius: 8px;
+}
+
+#limited-hoodie-section .hoodie-info {
+  flex: 1;
+  padding: 20px;
+}
+
+#limited-hoodie-section .hoodie-info h2 {
+  margin-bottom: 20px;
+  color: #e63946;
+  font-size: 2em;
+}
+
+#limited-hoodie-section .hoodie-info p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+#limited-hoodie-section .hoodie-info .product-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e63946; /* roter Hintergrund */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#limited-hoodie-section .hoodie-info .product-link:hover {
+  background-color: #ff4757;
+  transform: scale(1.1); /* Vergrert den Link beim Hover */
+}
+
+/* Limited Heart Hoodie Abschnitt */
+#limited-hoodie-section {
+  padding: 40px 20px;
+  background-color: #f8f8f8;
+}
+
+#limited-hoodie-section .limited-hoodies-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Sorgt fr responsives Verhalten */
+}
+
+#limited-hoodie-section .hoodie-image {
+  flex: 1;
+  text-align: center;
+}
+
+#limited-hoodie-section .hoodie-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* oder "contain", falls du das ganze Bild sehen mchtest */
+  border-radius: 8px;
+}
+
+#limited-hoodie-section .hoodie-info {
+  flex: 1;
+  padding: 20px;
+}
+
+#limited-hoodie-section .hoodie-info h2 {
+  margin-bottom: 20px;
+  color: #e63946;
+  font-size: 2em;
+}
+
+#limited-hoodie-section .hoodie-info p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+#limited-hoodie-section .hoodie-info .product-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e63946; /* roter Hintergrund */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#limited-hoodie-section .hoodie-info .product-link:hover {
+  background-color: #ff4757;
+  transform: scale(1.1); /* Vergrert den Link beim Hover */
+}
+/* Karussell-Container */
+#carousel-container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px; /* Erzeugt 3D-Tiefe */
+    overflow: hidden;
+}
+
+/* Gre des gesamten Karussells anpassen */
+#carousel {
+  position: relative;
+  width: 600px;    /* Gesamtbreite des Karussells */
+  height: 530px;   /* Gesamthhe des Karussells */
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+/* Gre jedes Carousel-Items anpassen */
+.carousel-item {
+  position: absolute;
+  inset: 0;
+  width: 500px;    /* Einheitliche Breite fr alle Produkte */
+  height: 500px;   /* Einheitliche Hhe fr alle Produkte */
+  transition: transform 1s ease, filter 1s ease;
+  transform-origin: center;
+}
+
+/* Bilder innerhalb der Carousel-Items */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Bild wird gleichmig skaliert und ggf. beschnitten, um das Format zu halten */
+  border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover-Effekt */
+.carousel-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.8);	
+}
+/* Stelle sicher, dass der Link relativ positioniert ist */
+.carousel-item a {
+    position: relative;
+    display: block;
+}
+
+/* Das Label, das den Produktnamen anzeigt */
+.carousel-item a .product-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6); /* halbtransparenter schwarzer Hintergrund */
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Beim Hover ber den Link erscheint das Label */
+.carousel-item a:hover .product-label {
+    opacity: 1;
+}
+
+/* Entfernt Transparenz */
+.carousel-item {
+    opacity: 1;
+}
+
+/* Bild im Fokus hervorheben */
+.carousel-item.active {
+    transform: scale(1.5) translateZ(250px);
+    z-index: 10;
+    filter: brightness(1.1) drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.8));
+}
+
+/* Standardcursor ausblenden */
+body {
+  cursor: none; 
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(201,34,37,1); /* Rote Farbe */
+  border-radius: 50%;
+  pointer-events: none; /* Verhindert Klick-Blockierung */
+  z-index: 99999; /* Hchste Prioritt */
+  box-shadow: 0 0 10px 2px red;
+  transition: transform 0.05s ease-out, opacity 0.2s ease-out;
+  opacity: 1; /* Cursor immer sichtbar */
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Der Main-Bereich wchst, wenn der Inhalt knapp ist */
+.wrapper main {
+  flex: 1;
+}
+
+.site-footer {
+  background: #fff;
+  color: #333;
+  padding: 2rem 1rem 0px 0px;
+  border-top: 3px solid #e63946; /* Roter Akzent */
+  font-family: 'Arvo', serif;
+}
+
+/* Oberer Bereich: Navigation links und Logo rechts */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #e63946;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+
+/* Neuer Bereich fr das Instagram-Icon in der Mitte */
+.footer-middle {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.footer-instagram img {
+  height: 30px; /* oder wie gehabt */
+  transition: transform 0.3s;
+  position: relative;
+  top: -85px; /* Verschiebt das Bild um 10px nach oben */
+}
+
+
+.footer-instagram img:hover {
+  transform: scale(1.2);
+}
+
+/* Unterer Bereich: Adresse und Copyright mittig */
+.footer-bottom {
+  text-align: center;
+  transform: translateY(-40px); 
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Dein bestehendes h3-Styling bleibt erhalten */
+main section h3 {
+  color: black;
+  font-size: 80px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  line-height: 1; /* Exakte Hhe ohne zustzlichen Abstand */
+}
+
+/* Banner Container soll nur so hoch sein wie der Text */
+#banner {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: flex; /* Zentriert den Text vertikal */
+  align-items: center; /* Keine unntige Hhe */
+  height: 100px; /* Exakt die Hhe des Textes */
+  margin-bottom: 0px;
+}
+
+/* Innerer Bereich mit der Animation */
+.bannertext {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+  min-width: 5%;
+}
+
+/* Endlos-Schleife */
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#banner {
+  border-top: 2px solid red; /* Obere rote Linie */
+  border-bottom: 2px solid red; /* Untere rote Linie */
+}
+
+/* 3D-Effekt für das Kontaktformular */
+.form-container {
+  perspective: 1000px;
+}
+
+.contact-form {
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.contact-form:hover {
+  transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mobile Anpassung fr Limited Hoodies */
+@media (max-width: 768px) {
+  .limited-hoodies-container {
+    flex-direction: column;
+  }
+}
